@@ -1,0 +1,8 @@
+<h1> <%= @category.name %> </h1>
+
+<% @prd.each do |t| %>
+	
+	<br>
+<%= link_to t.name, product_path(t) %>
+
+	<% end %>

@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   get 'magaz/products'
 
+  get 'magaz/products/:id', to: 'products#show', as: 'product'
+
+  get 'magaz/categories/:id', to: 'categories#show', as: 'category'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

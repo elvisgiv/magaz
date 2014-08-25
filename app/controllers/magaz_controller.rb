@@ -7,7 +7,9 @@ class MagazController < ApplicationController
 	end
 
 	def products
-		@cats = Product.all
+		@prd = Product.all
 	end
+
+	
 
 end

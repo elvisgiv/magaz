@@ -1,11 +1,19 @@
-<h1>Magaz#products</h1>
-p><%= @cats%></p>
+<h1>Products</h1>
+
 
 
 <ul>
-	<%= @cats.each do |t| %>
+	<% @prd.each do |t| %>
 	<li>
-		<%=t.name  %>, <%=t.id%>
+		
+		<%= link_to t.name, product_path(t) %>
 	<% end %>
 
+
+
+
+</ul>
+<ul>
+	<%= link_to 'Home', magaz_home_path %>
+	
 </ul>
