@@ -1,0 +1,11 @@
+<h1>Magaz#products</h1>
+p><%= @cats%></p>
+
+
+<ul>
+	<%= @cats.each do |t| %>
+	<li>
+		<%=t.name  %>, <%=t.id%>
+	<% end %>
+
+</ul>
