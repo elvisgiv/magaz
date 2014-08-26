@@ -5,7 +5,9 @@ class CategoriesController < ApplicationController
 
 	  @category = Category.find(@id) # get category from DB by ID
 
-	  @prd = Product.where("category_id = ?", @id)
+	  @prd = Product.where("category_id = ?", @id).order(price: :asc)
+
+
 
 
 	end

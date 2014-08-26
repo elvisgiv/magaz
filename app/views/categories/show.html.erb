@@ -1,8 +1,17 @@
 <h1> <%= @category.name %> </h1>
 
+<%= link_to 'price min', category_path(:sort=>'price_min') %>
+<%= link_to 'price max', category_path(:sort=>'price_max') %>
+<%= link_to 'name', category_path(:sort=>'name') %>
+<%= link_to 'popular', category_path(:sort=>'popular') %>
+
 <% @prd.each do |t| %>
 	
 	<br>
 <%= link_to t.name, product_path(t) %>
+<%= t.weight %>
+<%= t.price.round(2) %>
 
 	<% end %>
+
+	
