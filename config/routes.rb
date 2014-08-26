@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'magaz/home'
+  root 'magaz#home'
 
   get 'magaz/categories'
 
