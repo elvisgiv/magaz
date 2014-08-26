@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'magaz#home'
 
-  get 'magaz/categories'
+  match '/categories', to: 'magaz#categories', via: 'get'
 
-  get 'magaz/products'
+  match '/products', to: 'magaz#products', via: 'get'
 
   get 'magaz/products/:id', to: 'products#show', as: 'product'
 
