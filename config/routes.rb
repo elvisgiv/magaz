@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
   root 'magaz#home'
-
-  match '/categories', to: 'magaz#categories', via: 'get'
-
-  match '/products', to: 'magaz#products', via: 'get'
-
-  get 'magaz/products/:id', to: 'products#show', as: 'product'
-
+  get 'magaz/categories'
+  #match '/categories', to: 'magaz#categories', via: 'get'
+  get 'magaz/products/(:page)', to: 'magaz#products', as: 'magaz_products', defaults: {page: 1}, constraints: {page: /\d+/}
+  #match '/products', to: 'magaz#products', via: 'get'
+  get 'magaz/product/:id', to: 'products#show', as: 'product', defaults: {id: 1}, constraints: {id: /\d+/}
+  #match '/products/:id', to: 'products#show', as: 'product', via: 'get'
   get 'magaz/categories/:id', to: 'categories#show', as: 'category'
+    #match '/categories/:id', to: 'categories#show', as: 'category', via: 'get'
+  get 'magaz/cart', to: 'cart#show', as: 'cart'
 
+  post 'magaz/cart/add', to: 'cart#add', as: 'addcart' #написали to: 'cart#add', потому что контроллер cart_controller, а в нем метод def add
+
+  get 'magaz/cart/addresult', to: 'cart#addresult', as: 'addcartresult'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

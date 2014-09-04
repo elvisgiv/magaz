@@ -1,0 +1,11 @@
+- @items.each do |t|
+  = t[:name]
+  = t[:price]
+  = t[:quantity] #проходимся  по массиву хэшей, поэтому вызываем их не как для класса (через .), а через ключ для хешей ([:key])
+
+
+%ul
+  %li 
+    = link_to 'Categories', magaz_categories_path
+  %li 
+    = link_to 'Products', magaz_products_path

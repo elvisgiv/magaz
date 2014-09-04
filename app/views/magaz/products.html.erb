@@ -7,7 +7,18 @@
 	<li>
 		
 		<%= link_to t.name, product_path(t) %>
+		<%= t.price %>
+		<%= link_to t.category.name, category_path(t.category) %>
+
 	<% end %>
+
+
+
+<br><br><br><br><br><br>
+
+	<%= paginate @prd %>
+
+
 
 
 

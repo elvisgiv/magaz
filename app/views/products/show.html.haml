@@ -1,0 +1,16 @@
+%h1= @product.name
+price = 
+= @product.price
+
+weight = 
+= @product.weight
+
+%ul
+	%li 
+		= link_to 'Categories', magaz_categories_path
+	%li 
+		= link_to 'Products', magaz_products_path
+
+= button_to "add to cart", addcart_path(:id => @product.id, :q => 1), :method => "post"
+
+	
