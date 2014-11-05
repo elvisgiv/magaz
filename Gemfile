@@ -15,6 +15,24 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 gem 'haml-rails'
 
+gem 'bootstrap-sass'
+
+gem 'simple_form', '3.1.0.rc2'
+
+gem 'activeadmin', github: 'activeadmin'
+
+gem 'devise'
+
+gem 'awesome_nested_set'
+
+gem "activeadmin-sortable-tree", :github => "nebirhos/activeadmin-sortable-tree", :branch => "master"
+
+gem 'jquery-ui-rails'
+
+#gem 'slugged', '~> 2.0' #тоже, что и френдли айди
+
+gem 'friendly_id', '~> 5.0.0'
+
 gem 'kaminari'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -24,6 +42,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
+
+gem 'rails-i18n' # гем для локализации (перевод, лата и пр.)
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

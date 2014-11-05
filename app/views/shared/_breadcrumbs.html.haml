@@ -1,0 +1,5 @@
+%ol.breadcrumb
+	%li= link_to 'home', root_path
+	-links.each do |t|
+		%li		
+			= link_to t[:title], t[:url]

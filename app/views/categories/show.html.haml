@@ -1,0 +1,44 @@
+-content_for :breadcrumbs do
+	=render partial: "shared/breadcrumbs", locals:{links:breadcrumbs(@category, nil)}
+
+%h1= @category.name
+
+-if @children.empty?
+	-if @prd.empty?
+		Извините, сейчас продуктов данной категории нет!
+	-else
+		-@yyy = (@sort == 'price_min' ? 'price_max' : 'price_min')
+		= link_to 'price', category_path(:sort=>@yyy)
+
+		-@xxx = (@sort=='name1' ? 'name2' : 'name1')
+		= link_to 'name', category_path(:sort=>@xxx)
+
+		-@zzz = (@sort == 'popular1' ? 'popular2' : 'popular1') 
+		= link_to 'popular', category_path(:sort=>@zzz) 
+		%br
+		-@prd.each do |t|
+
+			%br
+			= link_to t.name, product_path(t) 
+			weight = 
+			= t.weight 
+			price = 
+			= t.price.round(2) 
+			popular = 
+			= t.popular 
+
+			-if t.warehouse_count == 0 
+				= t(:product_not_available)
+
+-else 
+	- @children.each do |t|
+		%li 
+			= link_to t.name, category_path(t)	
+%br
+%br
+%br
+%br
+%br
+= link_to 'Categories', categories_path 
+%br
+= link_to 'Products', products_path 

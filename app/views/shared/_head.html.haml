@@ -1,0 +1,10 @@
+-if @cart_n ==0
+	Корзина пуста
+-else
+	Количество товаров в корзине = #{@cart_n}
+	%br
+	Товаров на сумму = #{@cart_t}
+	%br
+	%td= link_to 'cart', cart_path
+	
+

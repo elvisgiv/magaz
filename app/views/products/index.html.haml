@@ -1,0 +1,35 @@
+-content_for :breadcrumbs do
+	=render partial: "shared/breadcrumbs", locals:{links:breadcrumbs(nil, nil)}
+%h1 Products
+
+
+
+%ul
+	-@prd.each do |t|
+		%li		
+			= link_to t.name, product_path(t)
+			= t.price
+			= link_to t.category.name, category_path(t.category)
+			-if t.warehouse_count == 0 
+				= t(:product_not_available)
+			-else 
+				= t.warehouse.quantity
+
+	
+
+
+
+%br
+%br
+%br
+%br
+= paginate @prd
+
+
+
+
+
+
+
+%ul
+	= link_to 'Home', root_path

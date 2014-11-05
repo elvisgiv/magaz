@@ -1,16 +1,25 @@
+-content_for :breadcrumbs do
+	=render partial: "shared/breadcrumbs", locals:{links:breadcrumbs(@product.category, @product)}
+
+
 %h1= @product.name
 price = 
 = @product.price
-
-weight = 
-= @product.weight
+-if @product.warehouse_count == 0 
+	= t(:product_not_available)
+-else
+	quantity = 
+	= @product.warehouse_count
+	= form_tag(addcart_path, :method => :post) do
+		= text_field_tag(:q)
+		= submit_tag ("add to cart")
+		= hidden_field_tag 'id', @product.id
 
 %ul
 	%li 
-		= link_to 'Categories', magaz_categories_path
+		= link_to 'Categories', categories_path
 	%li 
-		= link_to 'Products', magaz_products_path
+		= link_to 'Products', products_path
 
-= button_to "add to cart", addcart_path(:id => @product.id, :q => 1), :method => "post"
 
-	
+

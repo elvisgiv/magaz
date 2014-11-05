@@ -1,11 +1,38 @@
-- @items.each do |t|
-  = t[:name]
-  = t[:price]
-  = t[:quantity] #проходимся  по массиву хэшей, поэтому вызываем их не как для класса (через .), а через ключ для хешей ([:key])
-
+-unless flash[:success].nil?
+  .alert.alert-success(role='alert')
+    = flash[:success]
+-unless flash[:error].nil?
+  .alert.alert-danger(role='alert')
+    = flash[:error]    
+%table.table
+  %tr
+    %td Name
+    %td Price
+    %td Quantity
+    -#%td Discount
+    %td Total price
+    %td Delete
+    
+      
+    - @items.each do |t|
+      %tr
+        %td= link_to t.product.name, product_path(:id =>t[:product_id])
+        %td= t.price
+        %td  
+          =form_tag(updatecart_path, :method => :post) do
+            = text_field_tag :q, t.quantity
+            = submit_tag ("submit")
+            = hidden_field_tag 'id', t.id
+        %td= t.total
+        %td= link_to 'delete', deletecart_path(:product_id => t.product_id), method: :delete, data: { confirm: 'Are you sure?' }
+        
+Grand total = #{@gtotal}
 
 %ul
   %li 
-    = link_to 'Categories', magaz_categories_path
+    = link_to 'Categories', categories_path
   %li 
-    = link_to 'Products', magaz_products_path
+    = link_to 'Products', products_path
+
+=form_tag(checkout_address_path, :method => :get) do
+  = submit_tag ("checkout")   

@@ -1,11 +1,13 @@
-class CategoriesController < ApplicationController
+class CategoriesController < MyAppController
 	
 	def show
 	  @id = params[:id]	# category id from the URL in 'magaz/categories/:id' == :id in the URL
 
 	  @category = Category.find(@id) # get category from DB by ID
 
-	  @prd = Product.where("category_id = ?", @id).order(price: :asc)
+	  @children = @category.children
+
+	  @prd = Product.where("category_id = ?", @category.id).order(price: :asc)
 
 
 		@sort = params[:sort]
@@ -29,6 +31,17 @@ class CategoriesController < ApplicationController
 
   	
 
+	end
+
+
+	
+	def index
+
+		@cats = Category.roots #возвращает путь самой главной категории
+		#@cats[2].name = "mors"
+		#@cats[2].save
+		#@cats = Category.all #возвращает все категории из базы данных
+		#logger.debug"cc = #{@cats[2].to_param}"
 	end
 
 

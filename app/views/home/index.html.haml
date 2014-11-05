@@ -1,0 +1,23 @@
+.center.hero-unit
+  
+	%h1 Welcome to the MaGaz
+
+	= link_to "Category", categories_path
+
+	%br
+
+	= link_to "Product", products_path
+
+
+%table.table
+	%tr
+		%td Name
+		%td Price
+		%td Popular
+    
+    
+	- @products.each do |t|
+		%tr
+		%td= link_to t[:name], product_path(:id =>t[:id])
+		%td= t[:price]
+		%td= t[:popular]
