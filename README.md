@@ -1,1 +1,1 @@
-The e-shop engine
+Demo e-shop app on Ruby on Rails
