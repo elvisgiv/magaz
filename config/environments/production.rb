@@ -80,18 +80,22 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 #=begin
-  config.action_mailer.default_url_options = {:host => 'myapp.herokuapp.com', :protocol => 'http'} #I've also tried it without ":protocol => 'http'"
+  config.action_mailer.default_url_options = {:host => 'optimadata.co', :protocol => 'http'} #I've also tried it without ":protocol => 'http'"
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
-     :address => "smtp.gmail.com",
+     #:address => "smtp.gmail.com",
+     #:port => 587,
+     :address => "optimadata.co",
      :port => 587,
-     :authentication => :plain,  
-     :enable_starttls_auto => true,  
-     :user_name => 'alexeymaratovich@gmail.com',
-     :password => 'Dfhz26072010'
+     :authentication => :login,  
+     #:enable_starttls_auto => true,  
+     :openssl_verify_mode =>'none', 
+     :domain => "optimadata.co",
+     :user_name => 'alekseydanko@optimadata.co',
+     :password => '9112014'
    }
 #=end
 end

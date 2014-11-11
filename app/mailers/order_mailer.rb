@@ -1,5 +1,5 @@
 class OrderMailer < ActionMailer::Base
-  default from: "alexeymaratovich@gmail.com"
+  default from: "alekseydanko@optimadata.co"
 
   def order_new_email(order)
   	@order = order
