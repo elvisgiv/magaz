@@ -1,9 +1,9 @@
 class OrderMailer < ActionMailer::Base
-  default from: "system@example.com"
+  default from: "alexeymaratovich@gmail.com"
 
   def order_new_email(order)
   	@order = order
-  	mail(to: 'admin@example.com', subject: 'New order')
+  	mail(to: 'maxis.thegenius@gmail.com', subject: 'New order')
   	
   end
 

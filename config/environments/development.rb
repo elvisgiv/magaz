@@ -36,4 +36,19 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.autoload_paths += %W(#{config.root}/lib)
+#=begin
+  config.action_mailer.default_url_options = {:host => 'myapp.herokuapp.com', :protocol => 'http'} #I've also tried it without ":protocol => 'http'"
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+     :address => "smtp.gmail.com",
+     :port => 587,
+     :authentication => :plain,  
+     :enable_starttls_auto => true,  
+     :user_name => 'alexeymaratovich@gmail.com',
+     :password => 'Dfhz26072010'
+   }
+#=end
 end
