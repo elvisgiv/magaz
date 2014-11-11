@@ -28,7 +28,7 @@ gem 'devise'
 
 gem 'awesome_nested_set'
 
-gem "activeadmin-sortable-tree", :github => "nebirhos/activeadmin-sortable-tree", :branch => "master"
+gem "activeadmin-sortable-tree", :github => "elvisgiv/activeadmin-sortable-tree", :branch => "master"
 
 gem 'jquery-ui-rails'
 
