@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
 # Use mysql as the database for Active Record
-gem 'mysql2'
+gem 'pg'
+#gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -16,6 +17,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'haml-rails'
 
 gem 'bootstrap-sass'
+
+gem 'formtastic-bootstrap'
 
 gem 'simple_form', '3.1.0.rc2'
 
@@ -33,6 +36,8 @@ gem 'jquery-ui-rails'
 
 gem 'friendly_id', '~> 5.0.0'
 
+#gem 'install mysql2psql'
+
 gem 'kaminari'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -44,6 +49,19 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'rails-i18n' # гем для локализации (перевод, лата и пр.)
+
+group :test do
+  gem 'rspec-rails', '3.1.0'
+  gem 'rspec-activemodel-mocks'
+
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+
+  gem 'capybara'
+  #gem "capybara-webkit"
+  gem 'selenium-webdriver'
+  #gem 'sunspot-rails-tester'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
