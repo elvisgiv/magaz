@@ -10,8 +10,8 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
 default: &default
-  adapter: postgresql
-  #adapter: mysql2
+ #adapter: postgresql
+  adapter: mysql2
   encoding: utf8
   pool: 5
   username: root
@@ -21,8 +21,8 @@ default: &default
 development:
   <<: *default 
   database: magaz_dev
-  username: postgres
-  password: dfhz26072010
+  #username: postgres
+  #password: dfhz26072010
 
 
 
@@ -38,7 +38,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: magaz_test
+  database: magaz_test2
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
