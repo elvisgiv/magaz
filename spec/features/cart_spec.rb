@@ -66,4 +66,4 @@ RSpec.describe "Search products" do
 	end
 end
 
-#rspec 'spec/features/cart_spec.rb'
+#rspec 'spec/features/cart_spec.rb' 
